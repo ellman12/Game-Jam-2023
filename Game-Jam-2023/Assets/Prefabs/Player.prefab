@@ -515,7 +515,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   wallCheckLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   wallCheckRayLength: 0.52
 --- !u!114 &4744740487876015739
 MonoBehaviour:
@@ -529,11 +529,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f2e64054639bf4f82b1f2145f1a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 8
   player: {fileID: 4744740487876015728}
-  mask:
+  jumpLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16384
+  jumpSpeed: 8
 --- !u!114 &8813073536523826340
 MonoBehaviour:
   m_ObjectHideFlags: 0
