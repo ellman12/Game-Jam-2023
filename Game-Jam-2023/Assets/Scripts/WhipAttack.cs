@@ -37,12 +37,19 @@ public class WhipAttack : MonoBehaviour
             StartCoroutine(RunCooldown());
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+            Destroy(other.gameObject);
+    }
+
     private IEnumerator RunCooldown()
     {
         PlayerMovement.canMove = false;
         cooldownActive = true;
-        Instantiate(whip, transform.position + new Vector3(offset * side, 0, 0), Quaternion.identity, transform);
+        GameObject newWhip = Instantiate(whip, transform.position + new Vector3(offset * side, 0, 0), Quaternion.identity, transform);
         yield return new WaitForSeconds(whipUseTime);
+        Destroy(newWhip);
         PlayerMovement.canMove = true;
         yield return new WaitForSeconds(cooldown);
         cooldownActive = false;
