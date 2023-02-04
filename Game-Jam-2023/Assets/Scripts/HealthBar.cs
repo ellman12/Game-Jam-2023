@@ -4,6 +4,14 @@ using UnityEngine.UI;
 //https://youtu.be/BLfNP4Sc_iA
 public class HealthBar : MonoBehaviour
 {
+    public static HealthBar HB { get; private set; }
+
+    private void Awake()
+    {
+        if (HB != null && HB != this) Destroy(gameObject);
+        else HB = this;
+    }
+    
     public Image fill;
     public Slider slider;
     public Gradient gradient;
