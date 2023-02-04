@@ -546,4 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04eba157cec35a54984c6c14f1b72b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 6615320086234814029, guid: ecbc4cfbe07e5844d9700efec3471cf8, type: 3}
+  whip: {fileID: 5408898687954092193, guid: 8a84f9621ae935347a0c55d229fb05a2, type: 3}
+  offset: 3
+  whipUseTime: 0.3
+  cooldown: 0.1
