@@ -1,60 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerJump : MonoBehaviour
+public class PlayerJump: MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D rBody;
-    private PlayerInput pInput;
-    private bool bJump;
-    [SerializeField]
-    private float vertForce;
-    private BoxCollider2D hit;
-    private bool bTouching = false;
-    private bool forceAdded = false;
-
-    private void Start()
-    {
-        bJump = false;
-
-        pInput = new PlayerInput();
-        pInput.Enable();
-
-        pInput.PlayerMovement.Jump.performed += JumpStart;
-        pInput.PlayerMovement.Jump.canceled += JumpStop;
-    }
-    private void OnDisable()
-    {
-        pInput.PlayerMovement.Jump.performed -= JumpStart;
-        pInput.PlayerMovement.Jump.canceled -= JumpStop;
-        pInput.Disable();
-    }
-    private void Update()
-    {
-        if (bJump && bTouching)
+        public float jumpSpeed = 8f;
+        private float direction = 0f;
+        [SerializeField]
+        private Rigidbody2D player;
+        private bool jump = false;
+        private PlayerInput pInput;
+        // Start is called before the first frame update
+        void Start()
         {
-            rBody.AddForce(new Vector2(0.0f, vertForce), ForceMode2D.Impulse);
-            forceAdded = true;
+            pInput = new PlayerInput();
+            pInput.Enable();
+            player = GetComponent<Rigidbody2D>();
+
+            pInput.PlayerMovement.Jump.performed += JumpStart;
         }
-        forceAdded = false;
-            
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        bTouching = true;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        bTouching = false;
-    }
-    private void JumpStart(InputAction.CallbackContext c)
-    {
-        bJump = true;
-    }
-    private void JumpStop(InputAction.CallbackContext c)
-    {
-        bJump= false;
-    }
+
+        private void OnDisable()
+        {
+            pInput.PlayerMovement.Jump.performed -= JumpStart;
+        }
+        // Update is called once per frame
+        void Update()
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1.2f);
+            direction = Input.GetAxis("Horizontal");
+
+            if (jump && hit.collider != null)
+            {
+                Debug.Log("Working");
+                jump = false;
+                player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            }
+        }
+        private void JumpStart(InputAction.CallbackContext c)
+        {
+            jump = true;
+        }
 }
