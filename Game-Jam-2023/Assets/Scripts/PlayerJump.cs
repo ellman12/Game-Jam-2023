@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour
     private float direction = 0f;
     [SerializeField]
     private Rigidbody2D player;
-    private bool jump = false;
+    private bool jump, dJump;
     private PlayerInput pInput;
     [SerializeField]
     private LayerMask mask;
@@ -39,6 +39,13 @@ public class PlayerJump : MonoBehaviour
             Debug.Log("Working");
             jump = false;
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            dJump = true;
+        }
+        if (dJump && jump)
+        {
+            jump = false;
+            player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            dJump = false;
         }
     }
     private void JumpStart(InputAction.CallbackContext c)
