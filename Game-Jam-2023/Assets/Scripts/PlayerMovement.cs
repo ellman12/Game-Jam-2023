@@ -15,7 +15,9 @@ public class PlayerMovement : MonoBehaviour
 	private PlayerInput pInput;
 	private Vector3 direction;
 	private float curveIndex;
-	private bool bAccel, sprinting, canMove;
+	private bool bAccel, sprinting;
+
+	public static bool canMove = true;
 
 	private void Start()
 	{
@@ -63,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Update()
 	{
+		if (!canMove) return;
+		
 		direction.x = pInput.PlayerMovement.WASD.ReadValue<Vector2>().x;
 		direction.y = 0; //y not used for position
 		direction.z = 0; //z never used
