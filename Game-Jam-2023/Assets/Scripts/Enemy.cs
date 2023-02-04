@@ -11,5 +11,7 @@ public class Enemy: MonoBehaviour
     {
         if (collision.name == "Player")
             HealthBar.HB.TakeDamage(damage);
+        if (collision.name == "Attack")
+            Destroy(gameObject);
     }
 }
