@@ -3,50 +3,41 @@ using UnityEngine.InputSystem;
 
 public class PlayerJump : MonoBehaviour
 {
-	[SerializeField] private Rigidbody2D player;
+	[SerializeField] private new Rigidbody2D rigidbody;
 	[SerializeField] private LayerMask jumpLayerMask;
+	[SerializeField] private float jumpSpeed = 8f;
+	[SerializeField] private int extraJumpCount;
 	
-	private bool jump, dJump;
+	private int jumpsLeft;
 	private PlayerInput pInput;
 	
-	public float jumpSpeed = 8f;
+	private bool Grounded => Physics2D.Raycast(transform.position, -Vector2.up, 1.2f, jumpLayerMask).collider != null;
 
 	private void Start()
 	{
 		pInput = new PlayerInput();
 		pInput.Enable();
-		player = GetComponent<Rigidbody2D>();
 
-		pInput.PlayerMovement.Jump.performed += JumpStart;
+		pInput.PlayerMovement.Jump.performed += JumpInput;
 	}
 
 	private void OnDisable()
 	{
-		pInput.PlayerMovement.Jump.performed -= JumpStart;
+		pInput.PlayerMovement.Jump.performed -= JumpInput;
 	}
 
 	private void Update()
 	{
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1.2f, jumpLayerMask);
-
-		if (jump && hit.collider != null)
-		{
-			Debug.Log("Working");
-			jump = false;
-			player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-			dJump = true;
-		}
-
-		if (dJump && jump)
-		{
-			jump = false;
-			player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-			dJump = false;
-		}
+		if (Grounded)
+			jumpsLeft = extraJumpCount;
 	}
 
-	private void JumpStart(InputAction.CallbackContext c)
+	private void JumpInput(InputAction.CallbackContext c)
 	{
-		jump = true;
+		if (jumpsLeft > 0)
+		{
+			rigidbody.velocity = Vector2.up * jumpSpeed;
+			jumpsLeft--;
+		}
 	}
 }
