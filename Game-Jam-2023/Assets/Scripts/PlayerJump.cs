@@ -1,55 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerJump : MonoBehaviour
 {
-    public float jumpSpeed = 8f;
-    private float direction = 0f;
-    [SerializeField]
-    private Rigidbody2D player;
-    private bool jump, dJump;
-    private PlayerInput pInput;
-    [SerializeField]
-    private LayerMask mask;
-    // Start is called before the first frame update
-    void Start()
-    {
-        pInput = new PlayerInput();
-        pInput.Enable();
-        player = GetComponent<Rigidbody2D>();
+	[SerializeField] private new Rigidbody2D rigidbody;
+	[SerializeField] private LayerMask jumpLayerMask;
+	[SerializeField] private float jumpSpeed = 8f;
+	[SerializeField] private int extraJumpCount;
+	
+	private int jumpsLeft;
+	private PlayerInput pInput;
+	
+	private bool Grounded => Physics2D.Raycast(transform.position, -Vector2.up, 1.2f, jumpLayerMask).collider != null;
 
-        pInput.PlayerMovement.Jump.performed += JumpStart;
-    }
+	private void Start()
+	{
+		pInput = new PlayerInput();
+		pInput.Enable();
 
-    private void OnDisable()
-    {
-        pInput.PlayerMovement.Jump.performed -= JumpStart;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1.2f);
-        direction = Input.GetAxis("Horizontal");
+		pInput.PlayerMovement.Jump.performed += JumpInput;
+	}
 
-        if (jump && hit.collider != null)
-        {
-            Debug.Log("Working");
-            jump = false;
-            player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-            dJump = true;
-        }
-        if (dJump && jump)
-        {
-            jump = false;
-            player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-            dJump = false;
-        }
-    }
-    private void JumpStart(InputAction.CallbackContext c)
-    {
-        jump = true;
-    }
+	private void OnDisable()
+	{
+		pInput.PlayerMovement.Jump.performed -= JumpInput;
+	}
+
+	private void Update()
+	{
+		if (Grounded)
+			jumpsLeft = extraJumpCount;
+	}
+
+	private void JumpInput(InputAction.CallbackContext c)
+	{
+		if (jumpsLeft > 0)
+		{
+			rigidbody.velocity = Vector2.up * jumpSpeed;
+			jumpsLeft--;
+		}
+	}
 }

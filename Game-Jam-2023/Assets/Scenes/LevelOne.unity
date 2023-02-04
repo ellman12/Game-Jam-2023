@@ -3083,6 +3083,10 @@ PrefabInstance:
       propertyPath: wallCheckLayerMask.m_Bits
       value: 16384
       objectReference: {fileID: 0}
+    - target: {fileID: 4744740487876015739, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
+      propertyPath: jumpCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
 --- !u!1 &1210777551
