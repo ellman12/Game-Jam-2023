@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+	[SerializeField]
+	private Animator anim;
+	[SerializeField]
+	private SpriteRenderer sRen;
 	[Header("Movement Speed")]
 	[SerializeField] private float speed = 10f;
 	[SerializeField] private float sprintCoefficient = 2f;
@@ -74,13 +78,15 @@ public class PlayerMovement : MonoBehaviour
 		if (direction.x > 0)
 		{
 			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, wallCheckRayLength, wallCheckLayerMask);
+			sRen.flipX = false;
 			if (hit.collider != null)
 				return;
 		}
 		else if (direction.x < 0)
 		{
 			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, wallCheckRayLength, wallCheckLayerMask);
-			if (hit.collider != null)
+            sRen.flipX = true;
+            if (hit.collider != null)
 				return;
 		}
 
@@ -97,5 +103,8 @@ public class PlayerMovement : MonoBehaviour
 			transform.position += direction * (Time.deltaTime * speed * acceleration.Evaluate(curveIndex * sprintCoefficient));
 		else
 			transform.position += direction * (Time.deltaTime * speed * acceleration.Evaluate(curveIndex));
+
+		//feel free to change this
+		anim.SetFloat("MovementSpeed",pInput.PlayerMovement.WASD.ReadValue<Vector2>().magnitude);
 	}
 }
