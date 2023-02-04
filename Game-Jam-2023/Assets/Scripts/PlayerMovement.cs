@@ -3,9 +3,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+	[Header("Movement Speed")]
 	[SerializeField] private float speed = 10f;
 	[SerializeField] private float sprintCoefficient = 2f;
 	[SerializeField] private AnimationCurve acceleration;
+	
+	[Header("Wall Check")]
+	[SerializeField] private LayerMask wallCheckLayerMask;
+	[SerializeField] private float wallCheckRayLength;
 
 	private PlayerInput pInput;
 	private Vector3 direction;
@@ -61,6 +66,21 @@ public class PlayerMovement : MonoBehaviour
 		direction.x = pInput.PlayerMovement.WASD.ReadValue<Vector2>().x;
 		direction.y = 0; //y not used for position
 		direction.z = 0; //z never used
+
+		if (direction.x > 0)
+		{
+			Debug.DrawRay(transform.position, Vector3.right * wallCheckRayLength, Color.cyan);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, wallCheckRayLength, wallCheckLayerMask);
+			if (hit.collider != null)
+				return;
+		}
+		else if (direction.x < 0)
+		{
+			Debug.DrawRay(transform.position, Vector3.left * wallCheckRayLength, Color.green);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, wallCheckRayLength, wallCheckLayerMask);
+			if (hit.collider != null)
+				return;
+		}
 
 		if (bAccel)
 		{

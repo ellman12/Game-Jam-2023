@@ -516,7 +516,7 @@ MonoBehaviour:
   wallCheckLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  wallCheckRayLength: 0.55
+  wallCheckRayLength: 0.52
 --- !u!114 &4744740487876015739
 MonoBehaviour:
   m_ObjectHideFlags: 0
