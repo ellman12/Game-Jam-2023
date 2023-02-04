@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 417485997750936105}
   - component: {fileID: 417485997750936110}
   - component: {fileID: 417485997750936116}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Seeker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,6 +148,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  detectionDistance: 0
+  seekerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   speed: 1
 --- !u!114 &417485997750936116
 MonoBehaviour:

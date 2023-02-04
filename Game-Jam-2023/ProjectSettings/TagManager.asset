@@ -8,20 +8,20 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - 
   - Water
   - UI
+  - Attacks
+  - 
+  - Player
+  - 
+  - Enemy
+  - 
+  - Shrine
+  - 
   - Level
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
   - 
   - 
   - 

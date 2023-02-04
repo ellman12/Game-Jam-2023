@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7032777465954755851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Biter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8821770930901458388}
   - component: {fileID: 8821770930901458391}
   - component: {fileID: 8821770930901458389}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,3 +132,5 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackSpace: {fileID: 6615320086234814029, guid: ecbc4cfbe07e5844d9700efec3471cf8, type: 3}
   AttackRange: 3
+  cooldown: 1
+  reachDamage: 45
