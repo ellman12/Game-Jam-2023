@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,12 +16,12 @@ public class HealthBar : MonoBehaviour
     public Image fill;
     public Slider slider;
     public Gradient gradient;
-
+    private bool cooldown;
     private int health, maxHealth;
     public int Health
     {
         get => health;
-        set
+        private set
         {
             health = value;
             slider.value = value;
@@ -37,5 +38,26 @@ public class HealthBar : MonoBehaviour
     {
         maxHealth = Health = newMaxHealth;
         slider.maxValue = newMaxHealth;
+    }
+    public void TakeDamage(int dmg)
+    {
+        if (!cooldown)
+        {
+            Health -= dmg;
+            StartCoroutine(DamageCooldown());
+        }
+    }
+    public void GainHealth()
+    {
+        if (Health < maxHealth)
+            Health += 50;
+        if(Health > maxHealth)
+            Health = maxHealth;
+    }
+    IEnumerator DamageCooldown()
+    {
+        cooldown = true;
+        yield return new WaitForSeconds(.5f);
+        cooldown = false;
     }
 }
