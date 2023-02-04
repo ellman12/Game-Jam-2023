@@ -9,18 +9,35 @@ public class Seeker : MonoBehaviour
     private Vector3 direction;
 
     [SerializeField]
+    private float detectionDistance;
+    private Ray2D range;
+    private RaycastHit2D hit;
+    private bool moving;
+    [SerializeField]
+    private LayerMask seekerLayer;
+
+    [SerializeField]
     private float speed = 1;
     private void Update()
     {
-        if(transform.position.x - target.position.x > 0)
-        {
-            direction = new Vector3(-1, 0, 0);
-        } 
-        else if (transform.position.x - target.position.x < 0)
-        {
-            direction = new Vector3(1, 0, 0);
-        }
+        range.direction = target.position - transform.position;
+        range.origin = transform.position;
+        direction = target.position - transform.position;
+        Debug.DrawRay(range.origin, range.direction.normalized * detectionDistance, Color.red);
+        hit = Physics2D.Raycast(transform.position, target.position - transform.position, detectionDistance, seekerLayer);
 
-        transform.position += direction * Time.deltaTime * speed;
+        if (hit.collider != null)
+        {
+            if (transform.position.x - target.position.x > 0)
+            {
+                direction = new Vector3(-1, 0, 0);
+            }
+            else if (transform.position.x - target.position.x < 0)
+            {
+                direction = new Vector3(1, 0, 0);
+            }
+
+            transform.position += direction * Time.deltaTime * speed;
+        }
     }
 }
