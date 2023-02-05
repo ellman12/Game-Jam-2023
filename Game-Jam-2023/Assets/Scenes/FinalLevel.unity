@@ -726,7 +726,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 379004359}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -738,9 +738,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 746581388, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 746581390, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1369801272123147604, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
       propertyPath: m_Name
@@ -862,6 +866,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 980812420}
+    - target: {fileID: 6931424147172467224, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
 --- !u!1 &401698062 stripped
