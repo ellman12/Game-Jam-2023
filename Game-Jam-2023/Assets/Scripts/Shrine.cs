@@ -30,7 +30,9 @@ public class Shrine : MonoBehaviour
     [SerializeField]
     private LayerMask layer;
 
-
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource cleanse;
     private void Start()
     {
         pInput = new PlayerInput();
@@ -70,6 +72,7 @@ public class Shrine : MonoBehaviour
     {
         if (canPurify)
         {
+            cleanse.Play();
             bIsCleansed = true;
             eSprite.color = new Vector4(eSprite.color.r, eSprite.color.g, eSprite.color.b, 0);
             shrineSprite.sprite = CleansedSprite;
