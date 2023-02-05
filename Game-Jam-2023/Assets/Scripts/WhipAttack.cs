@@ -41,7 +41,7 @@ public class WhipAttack : MonoBehaviour
     {
         PlayerMovement.canMove = false;
         cooldownActive = true;
-        GameObject newWhip = Instantiate(whip, transform.position + new Vector3(offset * side, 0, 0), Quaternion.identity, transform);
+        GameObject newWhip = Instantiate(whip, transform.position + new Vector3(offset * side, 0, 0), Quaternion.Euler(0, side == 1 ? 0 : 180, 0), transform);
         yield return new WaitForSeconds(whipUseTime);
         Destroy(newWhip);
         PlayerMovement.canMove = true;
