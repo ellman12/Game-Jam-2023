@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6867351283294332368}
   - component: {fileID: 6867351283294332369}
   - component: {fileID: 6867351283294332382}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: VileVine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,8 @@ MonoBehaviour:
   detectionDistance: 8
   seekerLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
+  sRen: {fileID: 6867351283294332370}
   speed: 2
 --- !u!114 &6867351283294332374
 MonoBehaviour:

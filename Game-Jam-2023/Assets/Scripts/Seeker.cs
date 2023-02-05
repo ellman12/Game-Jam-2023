@@ -15,6 +15,8 @@ public class Seeker : MonoBehaviour
     private bool moving;
     [SerializeField]
     private LayerMask seekerLayer;
+    [SerializeField]
+    private SpriteRenderer sRen;
 
     [SerializeField]
     private float speed = 1;
@@ -30,11 +32,13 @@ public class Seeker : MonoBehaviour
         {
             if (transform.position.x - target.position.x > 0)
             {
-                direction = new Vector3(-1, 0, 0);
+                direction = new Vector3(-1, 0, 0);  //left
+                sRen.flipX = false ;
             }
             else if (transform.position.x - target.position.x < 0)
             {
-                direction = new Vector3(1, 0, 0);
+                direction = new Vector3(1, 0, 0);   //right
+                sRen.flipX = true;
             }
 
             transform.position += direction * Time.deltaTime * speed;
