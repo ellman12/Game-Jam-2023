@@ -44,9 +44,10 @@ public class Crystal : MonoBehaviour
     private float rate;
     [SerializeField]
     public Image background;
+    public Image ebackground;
     private bool startFade = false;
     private bool stopFade = false;
-
+    private bool bEaster = false;
 
     private void Start()
     {
@@ -56,11 +57,14 @@ public class Crystal : MonoBehaviour
         eSprite = interactPrompt.GetComponent<SpriteRenderer>();
         eSprite.color = new Vector4(eSprite.color.r, eSprite.color.g, eSprite.color.b, 0);
         pInput.PlayerMovement.Interact.performed += ShrineInteract;
+        pInput.PlayerMovement.EasterInteract.performed += eShrineInteract;
         #endregion
 
         #region End of Game
         background.color = new Vector4(background.color.r, background.color.g,
                                            background.color.b, 0);
+        ebackground.color = new Vector4(ebackground.color.r, ebackground.color.g,
+                                           ebackground.color.b, 0);
         used = false;
         #endregion
     }
@@ -109,14 +113,31 @@ public class Crystal : MonoBehaviour
             if (startFade)
             {
                 rate += Time.deltaTime;
-                background.color = new Vector4(background.color.r, background.color.g,
-                                               background.color.b, fadeIn.Evaluate(rate));
+                if (bEaster)
+                {
+                    ebackground.color = new Vector4(ebackground.color.r, ebackground.color.g,
+                                                   ebackground.color.b, fadeIn.Evaluate(rate));
+                }
+                else
+                {
+                    background.color = new Vector4(background.color.r, background.color.g,
+                                                   background.color.b, fadeIn.Evaluate(rate));
+                }
             }
             else
             {
                 rate += Time.deltaTime;
-                background.color = new Vector4(background.color.r, background.color.g,
-                                               background.color.b, 1 - fadeIn.Evaluate(rate));
+                if (bEaster)
+                {
+                    ebackground.color = new Vector4(ebackground.color.r, ebackground.color.g,
+                               ebackground.color.b, 1 - fadeIn.Evaluate(rate));
+                }
+                else
+                {
+                    background.color = new Vector4(background.color.r, background.color.g,
+                                                   background.color.b, 1 - fadeIn.Evaluate(rate));
+                }
+
                 if (rate >= 1)
                 {
                     stopFade = true;
@@ -140,6 +161,17 @@ public class Crystal : MonoBehaviour
             used = true;
             StartCoroutine(nameof(SpriteTransition));
             startFade = true;
+        }
+    }
+    private void eShrineInteract(InputAction.CallbackContext c)
+    {
+        if (canPurify)
+        {
+            canPurify = !canPurify;
+            used = true;
+            StartCoroutine(nameof(SpriteTransition));
+            startFade = true;
+            bEaster = true;
         }
     }
 
