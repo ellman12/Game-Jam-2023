@@ -29,6 +29,11 @@ public class Crystal : MonoBehaviour
     private RaycastHit2D hit;
     [SerializeField]
     private LayerMask layer;
+    [SerializeField]
+    private Animator anim;
+    [Range(0f, 1f)]
+    [SerializeField]
+    private float hold;
 
     [Header("Map-Related Tools")]
     [SerializeField]
@@ -50,6 +55,7 @@ public class Crystal : MonoBehaviour
     private bool startFade = false;
     private bool stopFade = false;
     private bool bEaster = false;
+    private bool anim1, anim2;
 
     private void Start()
     {
@@ -114,7 +120,9 @@ public class Crystal : MonoBehaviour
         {
             if (startFade)
             {
-                rate += Time.deltaTime;
+                anim1 = true;
+                anim.SetBool("Crystalt", anim1);
+                rate += Time.deltaTime * hold;
                 if (bEaster)
                 {
                     ebackground.color = new Vector4(ebackground.color.r, ebackground.color.g,
@@ -128,6 +136,8 @@ public class Crystal : MonoBehaviour
             }
             else
             {
+                anim2 = true;
+                anim.SetBool("CrystalAnimFinished", anim2);
                 rate += Time.deltaTime;
                 if (bEaster)
                 {
