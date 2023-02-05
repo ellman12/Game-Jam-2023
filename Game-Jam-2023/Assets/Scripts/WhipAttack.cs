@@ -37,12 +37,6 @@ public class WhipAttack : MonoBehaviour
             StartCoroutine(RunCooldown());
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy"))
-            Destroy(other.gameObject);
-    }
-
     private IEnumerator RunCooldown()
     {
         PlayerMovement.canMove = false;
