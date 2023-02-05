@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Crystal : MonoBehaviour
 {
+    [SerializeField] private GameObject gameWin;
+    
     [SerializeField] private Image progressImage;
     [SerializeField] private List<Sprite> progressSprites;
     public bool used;
@@ -181,6 +183,8 @@ public class Crystal : MonoBehaviour
                 {
                     stopFade = true;
                 }
+                
+                gameWin.SetActive(true);
             }
 
             if (rate >= 1)

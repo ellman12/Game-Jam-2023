@@ -1897,6 +1897,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d41ed1dac4101428b5673afcf9206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1176737380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5616541127621011896, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
+  m_PrefabInstance: {fileID: 379004359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1207630497
 GameObject:
   m_ObjectHideFlags: 0
@@ -44648,6 +44653,14 @@ PrefabInstance:
       propertyPath: PureMap
       value: 
       objectReference: {fileID: 1824211318}
+    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
+      propertyPath: gameWin
+      value: 
+      objectReference: {fileID: 1176737380}
+    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 1810531443}
     - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
       propertyPath: RottedMap
       value: 
