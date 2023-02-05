@@ -12,10 +12,11 @@ public class HealthBar : MonoBehaviour
         if (HB != null && HB != this) Destroy(gameObject);
         else HB = this;
     }
-    
-    public Image fill;
-    public Slider slider;
-    public Gradient gradient;
+
+    [SerializeField] private Image fill;
+    [SerializeField] private Slider slider;
+    [SerializeField] private Gradient gradient;
+    [SerializeField] private GameObject player, gameOver;
     private bool cooldown;
     private int health, maxHealth;
     public int Health
@@ -23,9 +24,18 @@ public class HealthBar : MonoBehaviour
         get => health;
         private set
         {
+            if (player == null) return;
+            
             health = value;
             slider.value = value;
             fill.color = gradient.Evaluate(slider.normalizedValue);
+
+            if (value <= 0)
+            {
+                Time.timeScale = 0;
+                player.SetActive(false);
+                gameOver.SetActive(true);
+            }
         }
     }
 
@@ -34,11 +44,12 @@ public class HealthBar : MonoBehaviour
         SetMaxHealth(100);
     }
 
-    private void SetMaxHealth(int newMaxHealth)
+    public void SetMaxHealth(int newMaxHealth)
     {
         maxHealth = Health = newMaxHealth;
         slider.maxValue = newMaxHealth;
     }
+    
     public void TakeDamage(int dmg)
     {
         if (!cooldown)
@@ -47,6 +58,7 @@ public class HealthBar : MonoBehaviour
             StartCoroutine(DamageCooldown());
         }
     }
+    
     public void GainHealth()
     {
         if (Health < maxHealth)
@@ -54,7 +66,8 @@ public class HealthBar : MonoBehaviour
         if(Health > maxHealth)
             Health = maxHealth;
     }
-    IEnumerator DamageCooldown()
+
+    private IEnumerator DamageCooldown()
     {
         cooldown = true;
         yield return new WaitForSeconds(.5f);
