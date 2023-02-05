@@ -32,6 +32,8 @@ public class Crystal : MonoBehaviour
 
     [Header("Map-Related Tools")]
     [SerializeField]
+    private GameObject RotFoliage, PureFoliage;
+    [SerializeField]
     private TilemapRenderer RottedMap;
     [SerializeField]
     private TilemapRenderer PureMap;
@@ -146,6 +148,13 @@ public class Crystal : MonoBehaviour
 
             if (rate >= 1)
             {
+                if (startFade)
+                {
+                    Destroy(RotFoliage);
+                    Instantiate(PureFoliage, new Vector3(0, 0, 0), Quaternion.identity);
+                    RottedMap.enabled = false;
+                    PureMap.enabled = true;
+                }
                 rate = 0;
                 startFade = !startFade;
             }
