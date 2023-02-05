@@ -566,6 +566,7 @@ MonoBehaviour:
     m_Bits: 16384
   jumpSpeed: 8
   extraJumpCount: 1
+  anim: {fileID: 1473416386}
 --- !u!114 &8813073536523826340
 MonoBehaviour:
   m_ObjectHideFlags: 0

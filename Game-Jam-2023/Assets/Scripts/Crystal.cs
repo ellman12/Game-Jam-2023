@@ -37,6 +37,13 @@ public class Crystal : MonoBehaviour
     [SerializeField]
     private float hold;
 
+    [Header("Crystal Sounds")]
+    [SerializeField]
+    private AudioSource humming; 
+    [SerializeField]
+    private AudioSource release;
+    private bool sounding;
+
     [Header("Map-Related Tools")]
     [SerializeField]
     private GameObject RotFoliage, PureFoliage;
@@ -96,19 +103,22 @@ public class Crystal : MonoBehaviour
         }
 
         progressImage.sprite = progressSprites[completedShrines];
-        
+
         #endregion
+
+        #region Raycast
+        range.direction = target.position - transform.position;
+        range.origin = transform.position;
+        Debug.DrawRay(range.origin, range.direction.normalized * detectionDistance, Color.red);
+        hit = Physics2D.Raycast(transform.position, target.position - transform.position, detectionDistance, layer);
+        #endregion
+
+
 
         if (!used)
         {
             if (completedShrines == shrines.Count)
             {
-                #region Raycast
-                range.direction = target.position - transform.position;
-                range.origin = transform.position;
-                Debug.DrawRay(range.origin, range.direction.normalized * detectionDistance, Color.red);
-                hit = Physics2D.Raycast(transform.position, target.position - transform.position, detectionDistance, layer);
-                #endregion
 
                 if (hit.collider != null && !used)
                 {
@@ -120,6 +130,16 @@ public class Crystal : MonoBehaviour
                     eSprite.color = new Vector4(eSprite.color.r, eSprite.color.g, eSprite.color.b, 0);
                     canPurify = false;
                 }
+            }
+
+            if (hit.collider != null)
+            {
+                if (!sounding) StartCoroutine(StartHumming());
+            }
+            else if (humming.isPlaying && sounding)
+            {
+                humming.Stop();
+                sounding = false;
             }
         } else if (used && !stopFade)
         {
@@ -140,6 +160,7 @@ public class Crystal : MonoBehaviour
                     background.color = new Vector4(background.color.r, background.color.g,
                                                    background.color.b, fadeIn.Evaluate(rate));
                 }
+                humming.volume = -fadeIn.Evaluate(rate);
             }
             else
             {
@@ -204,5 +225,19 @@ public class Crystal : MonoBehaviour
     {
         eSprite.color = new Vector4(eSprite.color.r, eSprite.color.g, eSprite.color.b, 0);
         yield return new WaitForSeconds(5);
+    }
+
+    IEnumerator StartHumming()
+    {
+        sounding = true;
+        humming.Play();
+        yield return new WaitForSeconds(16);
+        sounding = false;
+    }
+    IEnumerator StartFinalling()
+    {
+        sounding = true;
+        release.Play();
+        yield return new WaitForSeconds(16);
     }
 }

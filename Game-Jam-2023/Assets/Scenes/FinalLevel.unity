@@ -1107,26 +1107,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1527048291, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1598528399, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1598528400, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1598528401, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1598528403, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4744740487876015730, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1175,14 +1155,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4744740487876015739, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 980812422}
-    - target: {fileID: 8813073536523826340, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-      propertyPath: whip
-      value: 
-      objectReference: {fileID: 5695717112940314299, guid: 8bc83f7c220d53a4f9b0453f43f62d4d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
 --- !u!4 &679758054 stripped
@@ -1798,11 +1770,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4744740487876015730, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
   m_PrefabInstance: {fileID: 679758053}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &980812422 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1473416386, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
-  m_PrefabInstance: {fileID: 679758053}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1074995704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1879,31 +1846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d41ed1dac4101428b5673afcf9206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1169693599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6161134674193234757, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-  m_PrefabInstance: {fileID: 1332586088}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1169693603
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169693599}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db2a6db3a87984f4b86322c8a621557e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1207630497
 GameObject:
   m_ObjectHideFlags: 0
@@ -44451,14 +44393,6 @@ PrefabInstance:
       value: Crystal
       objectReference: {fileID: 0}
     - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1169693603}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: used
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 679758054}
@@ -44471,10 +44405,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1249803891}
     - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
       propertyPath: RotFoliage
       value: 
       objectReference: {fileID: 240572203}
@@ -44482,10 +44412,6 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 376244620}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: PureFoliage
-      value: 
-      objectReference: {fileID: 3357685346410382447, guid: 111e50947f06cc34e9ae4663b40783fb, type: 3}
     - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
       propertyPath: ebackground
       value: 
@@ -44510,49 +44436,9 @@ PrefabInstance:
       propertyPath: shrines.Array.data[2]
       value: 
       objectReference: {fileID: 799598844}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: progressImages.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: progressSprites.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: progressSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 976805267, guid: 0dd999d39228b0040ae6c29a8abc8eda, type: 3}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: progressSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: -1871545088, guid: 0dd999d39228b0040ae6c29a8abc8eda, type: 3}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: progressSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: -813854627, guid: 0dd999d39228b0040ae6c29a8abc8eda, type: 3}
-    - target: {fileID: 6161134674193234758, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: progressSprites.Array.data[3]
-      value: 
-      objectReference: {fileID: -1255092336, guid: 0dd999d39228b0040ae6c29a8abc8eda, type: 3}
-    - target: {fileID: 6161134674193234759, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 839255525, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
     - target: {fileID: 6161134674193234760, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234760, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234760, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234760, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6161134674193234760, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44593,10 +44479,6 @@ PrefabInstance:
     - target: {fileID: 6161134674193234760, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161134674193234760, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3bb3d919510a949ad71b650a250c0b, type: 3}
