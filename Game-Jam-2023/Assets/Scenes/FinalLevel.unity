@@ -1119,6 +1119,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 385277818582193264, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb521010b84fd1c4d8f1a59e59c6459d, type: 3}
+    - target: {fileID: 1097666465239884503, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d51271ebbf109d64bab1ddece47fa6cb, type: 3}
+    - target: {fileID: 4348278051942914196, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a4859d2bb4b597e408e9e55ec3475dc7, type: 3}
     - target: {fileID: 4744740487876015730, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1167,6 +1179,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4744740487876015738, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
+      propertyPath: step1
+      value: 
+      objectReference: {fileID: 679758055}
+    - target: {fileID: 4744740487876015738, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
+      propertyPath: step3
+      value: 
+      objectReference: {fileID: 679758057}
+    - target: {fileID: 4744740487876015738, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
+      propertyPath: step4
+      value: 
+      objectReference: {fileID: 679758056}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a25766d37477b5448bb530df164f6b7, type: 3}
 --- !u!4 &679758054 stripped
