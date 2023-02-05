@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8549381081880608006}
   - component: {fileID: 8549381081880608007}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InteractPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8549381082403768393}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shrine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
