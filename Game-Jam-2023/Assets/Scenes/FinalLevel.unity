@@ -830,6 +830,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1758031304644942715, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3646656352966340553, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -854,10 +858,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 980812420}
-    - target: {fileID: 5708523298597991230, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
-      propertyPath: mainMenu
-      value: 
-      objectReference: {fileID: 1593473946}
     - target: {fileID: 5715963594979606300, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
       propertyPath: player
       value: 
@@ -44836,11 +44836,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1593473946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3348875244304450040, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
-  m_PrefabInstance: {fileID: 379004359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1602804676
 PrefabInstance:
   m_ObjectHideFlags: 0
