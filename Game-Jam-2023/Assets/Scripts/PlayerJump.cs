@@ -13,7 +13,7 @@ public class PlayerJump : MonoBehaviour
 	
 	private bool Grounded => Physics2D.Raycast(transform.position, -Vector2.up, 1.2f, jumpLayerMask).collider != null;
 
-	private void Start()
+	private void OnEnable()
 	{
 		pInput = new PlayerInput();
 		pInput.Enable();
