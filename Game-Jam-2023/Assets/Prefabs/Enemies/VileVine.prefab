@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 6867351283294332368}
   - component: {fileID: 6867351283294332369}
   - component: {fileID: 6867351283294332382}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: VileVine
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
