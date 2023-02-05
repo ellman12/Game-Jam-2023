@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public static bool canMove = true;
 
-	private void Start()
+	private void OnEnable()
 	{
 		pInput = new PlayerInput();
 		pInput.Enable();

@@ -11,7 +11,7 @@ public class WhipAttack : MonoBehaviour
     private int side = 1;
     private PlayerInput pInput;
 
-    private void Start()
+    private void OnEnable()
     {
         pInput = new PlayerInput();
         pInput.Enable();
