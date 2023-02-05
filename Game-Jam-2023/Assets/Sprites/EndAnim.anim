@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CrystalIdle
+  m_Name: EndAnim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 839255525, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
-    - time: 0.38333333
-      value: {fileID: 1260081919, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
-    - time: 0.75
-      value: {fileID: 839255525, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
+      value: {fileID: -858840268, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
+    - time: 1.2333333
+      value: {fileID: -858840268, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,15 +42,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 839255525, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
-    - {fileID: 1260081919, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
-    - {fileID: 839255525, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
+    - {fileID: -858840268, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
+    - {fileID: -858840268, guid: c0d59ca440bf4374d8f987dabc48f198, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.76666665
+    m_StopTime: 1.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
