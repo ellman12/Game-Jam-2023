@@ -127,6 +127,8 @@ public class Crystal : MonoBehaviour
             {
                 anim1 = true;
                 anim.SetBool("Crystalt", anim1);
+                anim2 = true;
+                anim.SetBool("CrystalAnimFinished", anim2);
                 rate += Time.deltaTime * hold;
                 if (bEaster)
                 {
@@ -141,8 +143,7 @@ public class Crystal : MonoBehaviour
             }
             else
             {
-                anim2 = true;
-                anim.SetBool("CrystalAnimFinished", anim2);
+                
                 rate += Time.deltaTime;
                 if (bEaster)
                 {
