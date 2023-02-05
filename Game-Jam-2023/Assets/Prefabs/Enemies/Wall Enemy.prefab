@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5823601452309137558}
   m_Layer: 10
   m_Name: Wall Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   shootCooldown: 3
-  damage: 10
+  damage: 100
   front: {fileID: 6825429347342383171}
   target: {fileID: 0}
   pea: {fileID: 641722117165163059, guid: 925cbe82899a7a748a20ce60028c31eb, type: 3}

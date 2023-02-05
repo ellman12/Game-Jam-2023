@@ -47,15 +47,11 @@ public class WallEnemy : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Player"))
 			HealthBar.HB.TakeDamage(damage);
-
-		Destroy(other.gameObject);
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag("Player"))
 			HealthBar.HB.TakeDamage(damage);
-		
-		Destroy(other.gameObject);
 	}
 }
