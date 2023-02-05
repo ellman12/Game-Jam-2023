@@ -10,7 +10,9 @@ public class Lurker : MonoBehaviour
     private Transform PointB;
     [SerializeField]
     private AnimationCurve smoothLurk;
-
+    private bool animFlip;
+    [SerializeField]
+    private SpriteRenderer sRen;
     [SerializeField]
     private float speed = 1f;
     private float rate;
@@ -20,9 +22,12 @@ public class Lurker : MonoBehaviour
 
         transform.position = Vector3.Lerp(PointA.position, PointB.position, smoothLurk.Evaluate(rate));
 
+        if(rate >= .5f)
+            sRen.flipX = true;
         if (rate >= 1)
         {
             rate = 0;
+            sRen.flipX = false;
         }
     }
 }

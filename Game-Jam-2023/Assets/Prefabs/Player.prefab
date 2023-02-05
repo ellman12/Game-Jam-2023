@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 341346773}
   - component: {fileID: 341346774}
   - component: {fileID: 341346775}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1527048292}
   - component: {fileID: 1527048293}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: PlayerCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 1598528401}
   - component: {fileID: 1598528400}
   - component: {fileID: 1598528403}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 2101696096}
   - component: {fileID: 2101696098}
   - component: {fileID: 2101696097}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 4744740487876015739}
   - component: {fileID: 8813073536523826340}
   - component: {fileID: 1473416386}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,6 +488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841838023ebfbff469c7403c03f07007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1473416386}
+  sRen: {fileID: 4744740487876015734}
   speed: 12
   sprintCoefficient: 2
   acceleration:
