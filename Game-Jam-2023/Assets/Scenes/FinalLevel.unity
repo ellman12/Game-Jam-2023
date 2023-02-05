@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1920501}
   - component: {fileID: 1920500}
   - component: {fileID: 1920499}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 23852250}
   - component: {fileID: 23852249}
   - component: {fileID: 23852248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 34755575}
   - component: {fileID: 34755574}
   - component: {fileID: 34755573}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 225095286}
   - component: {fileID: 225095285}
   - component: {fileID: 225095284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,6 +846,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 980812420}
+    - target: {fileID: 5708523298597991230, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 1593473946}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
 --- !u!1 &401698062 stripped
@@ -1210,7 +1214,7 @@ GameObject:
   - component: {fileID: 761417076}
   - component: {fileID: 761417075}
   - component: {fileID: 761417074}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1623,7 +1627,7 @@ GameObject:
   - component: {fileID: 908008981}
   - component: {fileID: 908008980}
   - component: {fileID: 908008979}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1776,7 +1780,7 @@ GameObject:
   - component: {fileID: 1207630500}
   - component: {fileID: 1207630499}
   - component: {fileID: 1207630498}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44239,7 +44243,7 @@ GameObject:
   - component: {fileID: 1312566384}
   - component: {fileID: 1312566383}
   - component: {fileID: 1312566382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44432,7 +44436,7 @@ GameObject:
   - component: {fileID: 1361971781}
   - component: {fileID: 1361971780}
   - component: {fileID: 1361971779}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44687,7 +44691,7 @@ GameObject:
   - component: {fileID: 1495978170}
   - component: {fileID: 1495978169}
   - component: {fileID: 1495978168}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44759,7 +44763,7 @@ GameObject:
   - component: {fileID: 1586415547}
   - component: {fileID: 1586415546}
   - component: {fileID: 1586415545}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44820,6 +44824,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1593473946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3348875244304450040, guid: 59e9dc3237c87114da91b294dbe77d52, type: 3}
+  m_PrefabInstance: {fileID: 379004359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1602804676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44928,7 +44937,7 @@ GameObject:
   - component: {fileID: 1622211802}
   - component: {fileID: 1622211801}
   - component: {fileID: 1622211800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46979,7 +46988,7 @@ GameObject:
   - component: {fileID: 1868649461}
   - component: {fileID: 1868649460}
   - component: {fileID: 1868649459}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47306,7 +47315,7 @@ GameObject:
   - component: {fileID: 2020360689}
   - component: {fileID: 2020360688}
   - component: {fileID: 2020360687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47446,7 +47455,7 @@ GameObject:
   - component: {fileID: 2029534056}
   - component: {fileID: 2029534055}
   - component: {fileID: 2029534054}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47518,7 +47527,7 @@ GameObject:
   - component: {fileID: 2051645764}
   - component: {fileID: 2051645763}
   - component: {fileID: 2051645762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikeDamage (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
