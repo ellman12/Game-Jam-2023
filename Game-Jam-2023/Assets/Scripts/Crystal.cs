@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Crystal : MonoBehaviour
 {
+    [SerializeField] private Image progressImage;
+    [SerializeField] private List<Sprite> progressSprites;
     public bool used;
     private PlayerInput pInput;
 
@@ -84,6 +86,9 @@ public class Crystal : MonoBehaviour
             if (s.bIsCleansed == true)
                 completedShrines++;
         }
+
+        progressImage.sprite = progressSprites[completedShrines];
+        
         #endregion
 
         if (!used)
