@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,12 +17,16 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private LayerMask wallCheckLayerMask;
 	[SerializeField] private float wallCheckRayLength;
 
+	[Header("Step Audio")]
+	[SerializeField] private AudioSource step1, step3, step4;
+
 	private PlayerInput pInput;
 	private Vector3 direction;
 	private float curveIndex;
 	private bool bAccel, sprinting;
 
 	public static bool canMove = true;
+	public bool canSound = true;
 
 	private void OnEnable()
 	{
@@ -79,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, wallCheckRayLength, wallCheckLayerMask);
 			sRen.flipX = false;
+			if (canSound) StartCoroutine(StepSound());
 			if (hit.collider != null)
 				return;
 		}
@@ -86,7 +92,8 @@ public class PlayerMovement : MonoBehaviour
 		{
 			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, wallCheckRayLength, wallCheckLayerMask);
             sRen.flipX = true;
-            if (hit.collider != null)
+			if (canSound) StartCoroutine(StepSound());
+			if (hit.collider != null)
 				return;
 		}
 
@@ -107,4 +114,25 @@ public class PlayerMovement : MonoBehaviour
 		//feel free to change this
 		anim.SetFloat("MovementSpeed",pInput.PlayerMovement.WASD.ReadValue<Vector2>().magnitude);
 	}
+
+	IEnumerator StepSound()
+    {
+		canSound = false;
+		int random = Random.Range(0, 4);
+		switch(random)
+        {
+			case 0:
+				step1.Play();
+				break;
+			case 1:
+				step3.Play();
+				break;
+			case 2:
+				step4.Play();
+				break;
+        }
+		yield return new WaitForSeconds(0.35f);
+		canSound = true;
+    }
+
 }

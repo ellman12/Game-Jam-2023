@@ -17,6 +17,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private Gradient gradient;
     [SerializeField] private GameObject player, gameOver;
+    [SerializeField] private AudioSource hurt, death;
     private bool cooldown;
     private int health, maxHealth;
     public int Health
@@ -55,6 +56,13 @@ public class HealthBar : MonoBehaviour
         if (!cooldown)
         {
             Health -= dmg;
+            if(health > 0)
+            {
+                hurt.Play();
+            } else
+            {
+                death.Play();
+            }
             StartCoroutine(DamageCooldown());
         }
     }

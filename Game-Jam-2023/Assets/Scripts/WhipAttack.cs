@@ -6,6 +6,7 @@ public class WhipAttack : MonoBehaviour
 {
     [SerializeField] private GameObject whip;
     [SerializeField] private float offset, whipUseTime, cooldown;
+    [SerializeField] private AudioSource crack;
 
     private bool cooldownActive;
     private int side = 1;
@@ -41,6 +42,7 @@ public class WhipAttack : MonoBehaviour
     {
         PlayerMovement.canMove = false;
         cooldownActive = true;
+        crack.Play();
         GameObject newWhip = Instantiate(whip, transform.position + new Vector3(offset * side, 0, 0), Quaternion.Euler(0, side == 1 ? 0 : 180, 0), transform);
         yield return new WaitForSeconds(whipUseTime);
         Destroy(newWhip);
